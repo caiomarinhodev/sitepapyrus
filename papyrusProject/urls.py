@@ -16,9 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from sitepapyrus.views import IndexView
+from sitepapyrus.views import IndexView, EbookPage
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', IndexView.as_view(), name='index'),
+    path('ebook', EbookPage.as_view(), name='ebook'),
 ]

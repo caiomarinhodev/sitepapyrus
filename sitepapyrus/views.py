@@ -23,3 +23,8 @@ class IndexView(FormView):
     def form_invalid(self, form):
         messages.error(self.request, 'Erro ao enviar a mensagem, tente novamente.')
         return super(IndexView, self).form_invalid(form)
+
+
+class EbookPage(TemplateView):
+    template_name = 'ebook_page.html'
+
