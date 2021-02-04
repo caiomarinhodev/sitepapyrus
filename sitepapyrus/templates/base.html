@@ -37,11 +37,33 @@
 <body id="page-top" ondragstart="return false;" onselectstart="return false;" oncontextmenu="return false;">
 {% block content %}
 {% endblock %}
+<div id="WAButton"></div>
 
 <!-- Start of  Zendesk Widget script -->
-<script id="ze-snippet"
-        src="https://static.zdassets.com/ekr/snippet.js?key=fd19b6f6-cb4b-4c86-b6eb-c3aa437359bb"></script>
 <!-- End of  Zendesk Widget script -->
+
+<!--Floating WhatsApp css-->
+<link rel="stylesheet"
+      href="https://rawcdn.githack.com/rafaelbotazini/floating-whatsapp/3d18b26d5c7d430a1ab0b664f8ca6b69014aed68/floating-wpp.min.css">
+<!--Floating WhatsApp javascript-->
+<script type="text/javascript"
+        src="https://rawcdn.githack.com/rafaelbotazini/floating-whatsapp/3d18b26d5c7d430a1ab0b664f8ca6b69014aed68/floating-wpp.min.js"></script>
+
+<script>
+    $(function () {
+        $('#WAButton').floatingWhatsApp({
+            phone: '+5583986697661', //WhatsApp Business phone number International format-
+            //Get it with Toky at https://toky.co/en/features/whatsapp.
+            headerTitle: 'Fale comigo pelo Whastapp!', //Popup Title
+            popupMessage: 'Olá, sou Luanna da Papyrus. Seja bem-vindo(a) por aqui, em que posso te ajudar?', //Popup Message
+            showPopup: true, //Enables popup display
+            buttonImage: '<img src="https://rawcdn.githack.com/rafaelbotazini/floating-whatsapp/3d18b26d5c7d430a1ab0b664f8ca6b69014aed68/whatsapp.svg" />', //Button Image
+            //headerColor: 'crimson', //Custom header color
+            //backgroundColor: 'crimson', //Custom background button color
+            position: "right"
+        });
+    });
+</script>
 
 <script>
     window.mobileCheck = function () {
