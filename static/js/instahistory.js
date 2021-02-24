@@ -51,14 +51,14 @@
             // Determine what type of search we are going to make.
             if (settings.get.indexOf('#') > -1) {
                 searchType = 'tag';
-                searchUrl = '//www.instagram.com/explore/tags/' + settings.get.split('#')[1] + '/?__a=1';
+                searchUrl = 'http://www.instagram.com/explore/tags/' + settings.get.split('#')[1] + '/?__a=1';
                 if (settings.limit > 68) {
                     settings.limit = 68;
                     console.log("The max number of images for a tag is 68");
                 }
             } else if (settings.get.indexOf('@') > -1) {
                 searchType = 'user';
-                searchUrl = '//www.instagram.com/' + settings.get.split('@')[1] + '/?__a=1';
+                searchUrl = 'http://www.instagram.com/' + settings.get.split('@')[1] + '/?__a=1';
                 if (settings.limit > 12) {
                     settings.limit = 12;
                     console.log("The max number of images for a user is 24");
@@ -83,7 +83,7 @@
                                 class: 'img-responsive img-thumbnail'
                             });
                             imageUrl = '';
-                            linkUrl = '//www.instagram.com/p/' + post.shortcode + '/';
+                            linkUrl = 'http://www.instagram.com/p/' + post.shortcode + '/';
 
                             if (settings.squareImages) {
                                 var size; // is an index in an array
