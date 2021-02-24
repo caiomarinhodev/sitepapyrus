@@ -83,7 +83,7 @@
                                 class: 'img-responsive img-thumbnail'
                             });
                             imageUrl = '';
-                            linkUrl = 'https://www.instagram.com/p/' + post.shortcode + '/';
+                            linkUrl = '//www.instagram.com/p/' + post.shortcode + '/';
 
                             if (settings.squareImages) {
                                 var size; // is an index in an array
