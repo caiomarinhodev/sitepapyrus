@@ -69,7 +69,7 @@
 
             if (searchType) {
                 $.ajax({
-                    url: searchUrl,
+                    url: '/get-json',
                     success: function (data) {
                         var nodes;
                         if (searchType == 'tag') {

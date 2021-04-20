@@ -16,10 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from sitepapyrus.views import IndexView, EbookPage
+from sitepapyrus.views import IndexView, EbookPage, get_json_insta
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', IndexView.as_view(), name='index'),
     path('ebook', EbookPage.as_view(), name='ebook'),
+    path('get-json', get_json_insta, name='get-json'),
 ]
