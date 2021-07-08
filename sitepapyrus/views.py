@@ -1,10 +1,13 @@
+import glob
+import os
+
 import requests
 from django.contrib import messages
 from django.http import JsonResponse
-from django.shortcuts import render
-
 # Create your views here.
 from django.views.generic import TemplateView, FormView
+from instabot import Bot
+from instagrapi import Client
 
 from sitepapyrus.forms import MensagemForm
 
@@ -13,6 +16,9 @@ class IndexView(FormView):
     form_class = MensagemForm
     template_name = 'index.html'
     success_url = '/'
+
+    def get(self, request, *args, **kwargs):
+        return super(IndexView, self).get(request, *args, **kwargs)
 
     def post(self, request, *args, **kwargs):
         return super(IndexView, self).post(request, *args, **kwargs)
