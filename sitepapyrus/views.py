@@ -1,13 +1,8 @@
-import glob
-import os
-
 import requests
 from django.contrib import messages
 from django.http import JsonResponse
 # Create your views here.
 from django.views.generic import TemplateView, FormView
-from instabot import Bot
-from instagrapi import Client
 
 from sitepapyrus.forms import MensagemForm
 
