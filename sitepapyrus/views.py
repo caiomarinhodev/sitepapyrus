@@ -43,6 +43,7 @@ def get_json_insta(request):
     }
     req = requests.get(url, headers=headers)
     if req.status_code == 200:
+        print(req.text)
         return JsonResponse(req.json())
     else:
         return JsonResponse({})
