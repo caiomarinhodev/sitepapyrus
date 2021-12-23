@@ -20,7 +20,9 @@ from sitepapyrus.views import IndexView, EbookPage, get_json_insta
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', IndexView.as_view(), name='index'),
+    path('', IndexView.as_view(extra_context={
+        "instagram_profile_name": "papyrusatelie"
+    }), name='index'),
     path('ebook', EbookPage.as_view(), name='ebook'),
     path('get-json', get_json_insta, name='get-json'),
 ]

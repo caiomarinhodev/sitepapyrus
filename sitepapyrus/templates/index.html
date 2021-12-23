@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
+{% load instagram_client %}
 {% load filters %}
 {% block content %}
     <!-- Navigation-->
@@ -66,18 +67,16 @@
                 <h2 class="section-heading text-uppercase" style="letter-spacing: 16px;">Portfolio</h2>
                 <h3 class="section-subheading text-muted"></h3>
             </div>
-            <div class="row feed">
+            <div id="django_recent_media_wall" class="row feed">
+                {% instagram_user_recent_media instagram_profile_name %}
+                {% for media in recent_media %}
+                    <div class="django_instagram_media_wall_item col-sm-4 text-center">
+                        <a href="//instagram.com/p/{{ media.shortcode }}" target="_blank">
+                            <img src="{{ media.thumbnail_src }}" class="img-thumbnail"/>
+                        </a>
+                    </div>
+                {% endfor %}
             </div>
-            <script src="{% static 'js/instahistory.js' %}"></script>
-            <script>
-                $(document).ready(function () {
-                    $('.feed').instahistory({
-                        get: '@papyrusatelie',
-                        imageSize: 640,
-                        limit: 12
-                    });
-                });
-            </script>
         </div>
     </section>
     <!-- Services-->
@@ -204,5 +203,10 @@
     <script src="{% static 'assets/mail/contact_me.js' %}"></script>
     <!-- Core theme JS-->
     <script src="{% static 'js/scripts.js' %}"></script>
+    <script>
+        $(document).ready(function () {
+            console.log('{{ instagram_profile_name|capfirst }} Instagram feed');
+        });
+    </script>
 
 {% endblock %}
