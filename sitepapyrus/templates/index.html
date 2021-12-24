@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
-{% load instagram_client %}
 {% load filters %}
 {% block content %}
     <!-- Navigation-->
@@ -68,14 +67,22 @@
                 <h3 class="section-subheading text-muted"></h3>
             </div>
             <div id="django_recent_media_wall" class="row feed">
-                {% instagram_user_recent_media instagram_profile_name %}
-                {% for media in recent_media %}
-                    <div class="django_instagram_media_wall_item col-sm-4 text-center">
-                        <a href="//instagram.com/p/{{ media.shortcode }}" target="_blank">
-                            <img src="{{ media.thumbnail_src }}" class="img-thumbnail"/>
-                        </a>
-                    </div>
-                {% endfor %}
+                <!-- Place <div> tag where you want the feed to appear -->
+                <div id="curator-feed-default-feed-layout"><a href="https://curator.io" target="_blank"
+                                                              class="crt-logo crt-tag">Powered by Curator.io</a></div>
+                <!-- The Javascript can be moved to the end of the html page before the </body> tag -->
+                <script type="text/javascript">
+                    /* curator-feed-default-feed-layout */
+                    (function () {
+                        var i, e, d = document, s = "script";
+                        i = d.createElement("script");
+                        i.async = 1;
+                        i.charset = "UTF-8";
+                        i.src = "https://cdn.curator.io/published/dee6bbb2-b983-4863-8d08-97dac48f7f68.js";
+                        e = d.getElementsByTagName(s)[0];
+                        e.parentNode.insertBefore(i, e);
+                    })();
+                </script>
             </div>
         </div>
     </section>
@@ -206,6 +213,7 @@
     <script>
         $(document).ready(function () {
             console.log('{{ instagram_profile_name|capfirst }} Instagram feed');
+
         });
     </script>
 
