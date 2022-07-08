@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://papyrusatelie.herokuapp.com/">
-    <img src="https://papyrusatelie.herokuapp.com/static/assets/img/logo.png" height="150" alt="wm" />
+    <img src="https://i.imgur.com/faShOg7.png" height="150" alt="wm" />
   </a>
 </p>
 
